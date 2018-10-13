@@ -14,7 +14,6 @@ systemctl start acpid.service
 systemctl enable acpid.service
 systemctl start libvirtd.service
 systemctl enable libvirtd.service
-Active: active (running)
 systemctl status libvirtd
 systemctl is-enabled libvirtd
 mkdir /home/backup/
