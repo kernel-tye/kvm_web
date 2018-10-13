@@ -6,6 +6,7 @@ echo "2"
 sleep 1s
 echo "1"
 sleep 1s
+pip install --upgrade pip
 cat /proc/cpuinfo | egrep 'vmx|svm'
 yum install epel-release net-tools vim unzip zip wget ftp -y
 yum -y install qemu-kvm python-virtinst libvirt libvirt-python virt-manager libguestfs-tools bridge-utils virt-install
@@ -18,9 +19,9 @@ systemctl status libvirtd
 systemctl is-enabled libvirtd
 mkdir /home/backup/
 mv -f  /etc/sysconfig/network-scripts/ /home/backup/
-mv -f  /home/kvm_web/ifcfg-br0 /etc/sysconfig/network-scripts/
+mv -f  /home/kvm_web/ifcfg-br0 /etc/sysconfig/network-scripts
 rm -f  /etc/sysconfig/network-scripts/ifcfg-enp0s25
-mv -f  /home/kvm_web/ifcfg-enp0s25 /etc/sysconfig/network-scripts/ifcfg-enp0s25
+mv -f  /home/kvm_web/ifcfg-enp0s25 /etc/sysconfig/network-scripts/
 systemctl restart network
 sudo yum -y install http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 yum install epel-release
