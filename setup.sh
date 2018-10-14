@@ -83,8 +83,6 @@ EOF
 read -p "请输入对应的数字：" num3
 case $num3 in
     1)
-      
-
 yum -y upgrade
 pip install --upgrade pip
 sudo pip install numpy
@@ -93,10 +91,6 @@ yum install epel-release net-tools vim unzip zip wget ftp -y
 yum -y install qemu-kvm python-virtinst libvirt libvirt-python virt-manager libguestfs-tools bridge-utils virt-install
 yum install epel-release
 yum install epel-release
-
-
-
-
 cat /proc/cpuinfo | egrep 'vmx|svm'
 yum -y install mysql mysql-server mysql-devel
 sudo yum install sqlite-devel
@@ -121,7 +115,6 @@ sudo yum -y install gcc python-devel
     2)
      
 	 
-	 
 	 cd webvirtmgr
 sudo pip install -r requirements.txt
 sudo yum install epel-release
@@ -136,6 +129,10 @@ mkdir /var/www/
 cd ..
 sudo mv webvirtmgr /var/www/
 mv -f  /home/kvm_web/webvirtmgr.conf /etc/nginx/conf.d
+chmod 777 manage.py
+echo "imput user passwd"
+      sleep 1s
+      ./manage.py syncdb
 yum -y install vim*
 echo "zhushi server"
 sleep 3s
@@ -148,9 +145,6 @@ mv -f  /home/kvm_web/webvirtmgr.ini /etc/supervisord.d/webvirtmgr.ini
 sudo service supervisord stop
 sudo service supervisord start
 cd /var/www/webvirtmgr/
-	 
-	 
-	 
       car_menu
       ;;
     3)
